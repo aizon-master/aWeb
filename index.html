@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이존 (Aizon Inc.) - 종합 케어 서비스(Total Care Service))</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        * {
+            font-family: 'Pretendard', sans-serif;
+        }
+        
+        .bg-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .why-us-item {
+            transition: all 0.3s ease;
+        }
+        
+        .why-us-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            background-color: #111827;
+        }
+        
+        .kakao-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        
+        .kakao-chat:hover {
+            transform: scale(1.1);
+        }
+        
+        .contact-form input, .contact-form textarea {
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="bg-overlay"></div>
+        <div class="content container mx-auto px-4 h-full flex flex-col justify-center">
+            <nav class="absolute top-0 left-0 w-full py-6">
+                <div class="container mx-auto px-4 flex justify-between items-center">
+                    <a href="#" class="text-white text-3xl font-bold">
+                        아이존 <span class="text-indigo-400">Inc.</span>
+                    </a>
+                    <div class="flex space-x-6">
+                        <a href="#services" class="text-white hover:text-indigo-300 transition-colors">서비스</a>
+                        <a href="#why-us" class="text-white hover:text-indigo-300 transition-colors">왜 아이존인가?</a>
+                        <a href="#contact" class="text-white hover:text-indigo-300 transition-colors">문의하기</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    종합 케어 서비스(Total Care Service))의 <br>새로운 기준을 제시합니다
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    아이존은 보육, 요양, 장례, 실버라이프, 교육 및 운송 서비스까지 <br>
+                    다양한 분야에서 최고의 품질을 약속합니다.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg text-lg font-medium transition-colors shadow-lg">
+                        서비스 알아보기
+                    </a>
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-indigo-600 py-3 px-8 rounded-lg text-lg font-medium transition-colors shadow-lg">
+                        문의하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">우리의 서비스</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    아이존은 생애 전 주기에 걸쳐 필요한 다양한 서비스를 제공합니다.
+                    전문성과 정성을 바탕으로 고객님의 삶의 질을 높이는데 기여합니다.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-child text-7xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">유치원·어린이집 & 어르신 데이케어</h3>
+                        <p class="text-gray-600">
+                            서울시 각 지역에 위치한 유치원 및 어린이집과 어르신 데이케어 서비스를 병행 운영합니다. 
+                            세대 간 소통과 이해를 바탕으로 한 통합 케어 시스템을 제공합니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-hand-holding-heart text-7xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">요양원</h3>
+                        <p class="text-gray-600">
+                            편안하고 안전한 환경에서 어르신들의 건강과 행복을 최우선으로 생각합니다.
+                            전문 의료진과 요양보호사가 24시간 케어하는 믿을 수 있는 요양원입니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-pray text-7xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">봉안당</h3>
+                        <p class="text-gray-600">
+                            고인의 명복을 빌며 유가족의 마음을 위로하는 정성스러운 봉안 서비스를 제공합니다.
+                            편안하고 품격 있는 공간에서 고인을 추모할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-home text-7xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">실버타운</h3>
+                        <p class="text-gray-600">
+                            편안하고 활기찬 노후를 위한 최적의 주거환경을 제공합니다.
+                            의료, 문화, 여가 시설이 완비된 프리미엄 실버타운에서 품격 있는 노후를 보내세요.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-7xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">요양보호사학원</h3>
+                        <p class="text-gray-600">
+                            전문적인 요양보호사 양성을 위한 체계적인 교육 프로그램을 운영합니다.
+                            이론과 실습을 균형 있게 배우며 현장에서 필요한 실무 역량을 키울 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-car text-7xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">법인전용 대리운전 서비스</h3>
+                        <p class="text-gray-600">
+                            기업 고객을 위한 전문적인 대리운전 서비스를 제공합니다.
+                            엄선된 기사진과 철저한 보안 시스템으로 안전하고 편리한 이동을 보장합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">왜 아이존을 선택해야 할까요?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    아이존은 고객 만족을 최우선으로 생각하며, 
+                    차별화된 서비스와 전문성으로 새로운 가치를 창출합니다.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Why Us Item 1 -->
+                <div class="why-us-item bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-medal text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">20년 이상의 경험</h3>
+                    <p class="text-gray-600">
+                        오랜 경험을 바탕으로 축적된 노하우와 전문성으로 최상의 서비스를 제공합니다.
+                    </p>
+                </div>
+                
+                <!-- Why Us Item 2 -->
+                <div class="why-us-item bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">전문 인력 보유</h3>
+                    <p class="text-gray-600">
+                        각 분야 최고의 전문가들이 함께하며, 지속적인 교육과 훈련으로 서비스 품질을 유지합니다.
+                    </p>
+                </div>
+                
+                <!-- Why Us Item 3 -->
+                <div class="why-us-item bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">품질 보증</h3>
+                    <p class="text-gray-600">
+                        엄격한 품질 관리 시스템을 통해 높은 서비스 수준을 일관되게 유지합니다.
+                    </p>
+                </div>
+                
+                <!-- Why Us Item 4 -->
+                <div class="why-us-item bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">고객 중심 서비스</h3>
+                    <p class="text-gray-600">
+                        고객의 니즈와 요구사항을 최우선으로 고려하여 맞춤형 서비스를 제공합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">문의하기</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    더 자세한 정보가 필요하시거나 서비스에 대해 궁금한 점이 있으신가요?
+                    아래 양식을 작성하시거나 카카오톡으로 문의해 주세요.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="w-full md:w-1/2">
+                        <form id="contact-form" class="contact-form">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">이름</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">이메일</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">연락처</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">문의 내용</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg text-lg font-medium transition-colors shadow-lg w-full">
+                                문의하기
+                            </button>
+                        </form>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="h-full bg-indigo-50 rounded-xl p-8 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">연락처 정보</h3>
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">주소</h4>
+                                    <p class="text-gray-600">서울특별시 강남구 테헤란로 123 아이존빌딩 5층</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">전화</h4>
+                                    <p class="text-gray-600">1800-0401</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start mb-4">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">이메일</h4>
+                                    <p class="text-gray-600">info@aizon.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800 mb-1">영업시간</h4>
+                                    <p class="text-gray-600">평일: 09:00 - 18:00<br>주말 및 공휴일: 휴무</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">아이존 <span class="text-indigo-400">Inc.</span></h3>
+                    <p class="text-gray-400">종합 케어 서비스(Total Care Service))의 새로운 기준</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-12">
+                    <div class="mb-6 md:mb-0">
+                        <h4 class="text-lg font-medium mb-4">주요 서비스</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">유치원·어린이집 & 데이케어</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">요양원</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">봉안당</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">실버타운</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">요양보호사학원</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">법인전용 대리운전</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-4">고객지원</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">공지사항</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">자주 묻는 질문</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">이용약관</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">개인정보처리방침</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 아이존 Inc. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-blog text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Kakao Talk Button -->
+    <a href="https://open.kakao.com/o/srUHq4kh" target="_blank" class="kakao-chat flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 w-16 h-16 rounded-full shadow-lg transition-all">
+        <i class="fas fa-comment text-3xl text-gray-900"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show an alert
+            alert(`${name}님, 문의해 주셔서 감사합니다. 빠른 시일 내에 연락드리겠습니다.`);
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const heroSection = document.querySelector('.hero');
+            
+            if (scrollPosition <= heroSection.offsetHeight) {
+                const yPos = scrollPosition * 0.5;
+                heroSection.style.backgroundPosition = `center ${yPos}px`;
+            }
+        });
+    </script>
+</body>
+</html>
